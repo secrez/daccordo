@@ -88,7 +88,7 @@ DAccordo handle the encryption via @secrez/crypto, which uses TweetNaCl (https:/
 
 ## Copyright
 
-2021 (c) [Francesco Sullo](https://francesco.sullo.co) / [ndujaLabs](https://ndujalabs.com)
+2021 (c) [Francesco Sullo](https://francesco.sullo.co)
 
 ## License
 
