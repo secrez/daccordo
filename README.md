@@ -60,7 +60,7 @@ const bodyParams = {
 
 const encryptedParams = DAccordo.encryptObject(
     bodyParams, 
-    process.env.api1privKey, 
+    process.env.api1secretKey, 
     process.env.api2publicKey
 );
 
@@ -77,7 +77,7 @@ const DAccordo = require('@secrez/daccordo')
 
 const bodyParams = DAccordo.decryptJSONString(
     encryptedParams, 
-    process.env.api2privKey, 
+    process.env.api2secretKey, 
     process.env.api1publicKey
 );
 ```
