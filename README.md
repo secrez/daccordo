@@ -65,8 +65,10 @@ const encryptedParams = DAccordo.encryptObject(
 );
 
 superagent
-    .post(otherServerURL)
+    .post("https://api2.secrez.cc/v1/booking")
     .body({encryptedParams})
+    .then(...)
+    
 ```
 
 API2 is receiving the request by API1:
@@ -75,11 +77,23 @@ API2 is receiving the request by API1:
 require("dotenv").config();
 const DAccordo = require('@secrez/daccordo')
 
-const bodyParams = DAccordo.decryptJSONString(
-    encryptedParams, 
-    process.env.api2secretKey, 
-    process.env.api1publicKey
-);
+router.post("/booking", async (req, res) => {
+  const { encryptedParams } = req.body;
+
+  try {
+    const bodyParams = DAccordo.decryptJSONString(
+        encryptedParams, 
+        process.env.api2secretKey, 
+        process.env.api1publicKey
+    );
+    ...
+  } catch(e) {
+    res.status(401).json({
+        errorCode: 404,
+        message: "Unauthorized"
+    })
+  }
+...  
 ```
 
 # Security

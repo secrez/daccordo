@@ -1,6 +1,6 @@
 {
 	"name": "@secrez/daccordo",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A tool to make encrypted communications between servers",
 	"homepage": "https://github.com/secrez/daccordo#readme",
 	"bugs": {
