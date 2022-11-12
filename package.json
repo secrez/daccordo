@@ -1,0 +1,51 @@
+{
+	"name": "@secrez/daccordo",
+	"version": "0.0.1",
+	"description": "A tool to make encrypted communications between servers",
+	"homepage": "https://github.com/secrez/daccordo#readme",
+	"bugs": {
+		"url": "https://github.com/secrez/daccordo/issues"
+	},
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"release": "np",
+		"test-only": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/*.test.js --exit",
+		"test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text ./node_modules/.bin/_mocha test/*.test.js --exit",
+		"posttest": "nyc check-coverage --statements 90 --branches 80 --functions 85 --lines 90"
+	},
+	"bin": {
+		"daccordo": "bin/daccordo.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/secrez/daccordo.git"
+	},
+	"author": {
+		"name": "Francesco Sullo",
+		"email": "francesco@sullo.co"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"dependencies": {
+		"@secrez/crypto": "1.0.2",
+		"chai": "^4.3.4",
+		"chalk": "^3.0.0",
+		"command-line-args": "^5.2.0",
+		"ethers": "^5.5.2",
+		"fs-extra": "^10.0.0"
+	},
+	"devDependencies": {
+		"cross-env": "^7.0.3",
+		"eslint": "^7.32.0",
+		"eslint-plugin-node": "^11.1.0",
+		"lodash": "^4.17.21",
+		"mocha": "^9.1.3",
+		"np": "^3.1.0",
+		"nyc": "^15.1.0",
+		"test-console": "^2.0.0"
+	}
+}
